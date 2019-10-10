@@ -1,0 +1,26 @@
+{
+  "name": "tjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohesan/TorontoJS-soundPrj.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohesan/TorontoJS-soundPrj/issues"
+  },
+  "homepage": "https://github.com/mohesan/TorontoJS-soundPrj#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "audiokeys": "^0.1.1"
+  }
+}
