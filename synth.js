@@ -11,7 +11,8 @@ console.log(scale(scaleType1));
 
 let { notes: n1 } = scale(scaleType1);
 let { notes: n2 } = scale(scaleType2);
-let notes = [...n1, ...n2];
+let { notes: n3 } = scale(scaleType3);
+let notes = [...n1, ...n2, ...n3];
 
 //create a synth and connect it to the master output (your speakers)
 var synth = new Tone.PolySynth(6,Tone.Synth, {
@@ -19,6 +20,13 @@ var synth = new Tone.PolySynth(6,Tone.Synth, {
 		type: "sine"
 	}
 }).toMaster();
+
+var loop = new Tone.Loop(function(time){
+	let note = sample(notes);
+	console.log(time,note);
+	synth.triggerAttackRelease(note, '8n', time);
+}, "8n").start(0);
+Tone.Transport.start();
 
 var keyboard = new AudioKeys();
 let ctx = new AudioContext();
